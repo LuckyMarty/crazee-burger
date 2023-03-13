@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Salut Lucky
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  // state (état, données)
+
+
+  // Comportements
+  const handleSubmit = () => {
+
+  }
+
+
+  // Affichage (render)
+  return <div>
+    <h1>Bienvenu chez nous !</h1>
+    <h2>Connectez vous</h2>
+
+    <form>
+      <input placeholder="Entrez votre prénom..." required></input>
+      <button onSubmit={handleSubmit}>Accédez à votre espace</button>
+    </form>
+  </div>
 }
 
 export default App;
