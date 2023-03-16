@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { LoginPage } from "./components/pages/LoginPage";
 
 const App = () => {
   // state (état, données)
@@ -11,15 +12,7 @@ const App = () => {
 
 
   // Affichage (render)
-  return <div>
-    <h1>Bienvenu chez nous !</h1>
-    <h2>Connectez vous</h2>
-
-    <form>
-      <input placeholder="Entrez votre prénom..." required></input>
-      <button onSubmit={handleSubmit}>Accédez à votre espace</button>
-    </form>
-  </div>
+  return <LoginPage />
 }
 
 export default App;
