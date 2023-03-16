@@ -5,10 +5,7 @@ const App = () => {
   // state (état, données)
 
 
-  // Comportements
-  const handleSubmit = () => {
-
-  }
+  // Comportements  
 
 
   // Affichage (render)
