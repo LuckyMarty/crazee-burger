@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import './LoginForm.css';
 
 export const LoginForm = () => {
     // State
@@ -20,7 +21,7 @@ export const LoginForm = () => {
     
     return (
         <form action='submit' onSubmit={handleSubmit}>
-            <h1>Bienvenu chez nous !</h1>
+            <h1>Bienvenue chez nous !</h1>
             <br />
             <h2>Connectez-vous</h2>
             <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom..." required></input>
@@ -28,3 +29,12 @@ export const LoginForm = () => {
         </form>
     )
 }
+
+
+/**
+ * 4 méthodes pour ajouter de style à un composants
+ * 1. inline style
+ * 2. object style
+ * 3. module CSS (avec className)
+ * 4. global style (index.css)
+ */
