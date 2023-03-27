@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export const LoginForm = () => {
     // State
@@ -23,6 +24,7 @@ export const LoginForm = () => {
             <h2>Connectez-vous</h2>
             <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom..." required></input>
             <button>Accédez à votre espace</button>
+            <Link to="/order">Vers la page OrderPage</Link>
         </form>
     )
 }
