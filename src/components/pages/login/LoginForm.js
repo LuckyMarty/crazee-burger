@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../../theme';
 import { BsPersonCircle } from 'react-icons/bs';
-import { FaBeer } from 'react-icons/fa';
 
 export const LoginForm = () => {
     // State
@@ -24,8 +23,6 @@ export const LoginForm = () => {
     
     return (
         <LoginFormStyled action='submit' onSubmit={handleSubmit}>
-            <BsPersonCircle />
-            <FaBeer />
             <h1>Bienvenue chez nous !</h1>
             <hr />
             <h2>Connectez-vous</h2>
@@ -49,6 +46,7 @@ const LoginFormStyled = styled.form`
     h1,
     h2 {
         font-family: 'Amatic SC';
+        color: ${color.white};
     }
 
     h1 {
@@ -62,7 +60,7 @@ const LoginFormStyled = styled.form`
     hr {
         width: 400px;
         height: 3px;
-        border: 1px solid ${color.orange};
+        border: none;
         background-color: ${color.orange};
     }
 
@@ -81,6 +79,7 @@ const LoginFormStyled = styled.form`
 
         >button {
             color: ${color.white};
+            background-color: ${color.primary_burger};
         }
     }
 `
