@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { theme } from '../../../theme';
 import { BsPersonCircle } from 'react-icons/bs';
 import { IoChevronForward } from 'react-icons/io5';
+import Input from './Input';
 
 export const LoginForm = () => {
     // State
@@ -27,11 +28,14 @@ export const LoginForm = () => {
             <h1>Bienvenue chez nous !</h1>
             <hr />
             <h2>Connectez-vous</h2>
-            <div>
-                <div className='input-container'>
-                    <BsPersonCircle />
-                    <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom..." required />
-                </div>
+            <div>               
+                <Input
+                    value={inputValue}
+                    onChange={handleChange}
+                    placeholder="Entrez votre prénom..."
+
+                    Icon={<BsPersonCircle />}
+                />
                 <button>Accédez à votre espace <IoChevronForward /> </button>
             </div>
         </LoginFormStyled>
@@ -74,15 +78,12 @@ const LoginFormStyled = styled.form`
         gap: ${spacing.md};
         width: 400px;
 
-        >button,
-        >div,
-        >div>input {
+        >button {
             border-radius: ${theme.borderRadius.round};
             border: none;
         }
 
-        >button,
-        >div {
+        >button {
             padding: ${spacing.md};
         }
 
@@ -97,17 +98,6 @@ const LoginFormStyled = styled.form`
             &:hover {
                 background-color: ${color.white};
                 color: #000;
-            }
-        }
-
-        > div {
-            background-color: ${color.white};
-            display: flex;
-            align-items: center;
-            gap: ${spacing.sm};
-
-            >input {
-                width: 100%;
             }
         }
     }
