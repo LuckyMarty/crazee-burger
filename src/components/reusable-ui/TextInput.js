@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '../../../theme'
+import { theme } from '../../theme'
 
-export default function Input(
+export default function TextTextInput(
     {
         value,
         onChange,
@@ -12,7 +12,7 @@ export default function Input(
     }
 ) {
     return (
-        <InputStyled>
+        <TextInputStyled>
             {Icon && Icon}
             <input
                 value={value}
@@ -20,7 +20,7 @@ export default function Input(
                 type="text"
                 {...restProps}
             />
-        </InputStyled>
+        </TextInputStyled>
     )
 }
 
@@ -28,7 +28,7 @@ export default function Input(
 const color = theme.colors;
 const spacing = theme.spacing;
 
-const InputStyled = styled.div`
+const TextInputStyled = styled.div`
     border-radius: ${theme.borderRadius.round};
     border: none;
 
