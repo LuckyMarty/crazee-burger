@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '../../theme'
+import { theme } from '../../../theme'
 import img_logo from './assets/F03 logo-orange.png'
 
 
@@ -21,6 +21,7 @@ const spacing = theme.spacing;
 const LogoStyled = styled.div`
     font-family: 'Amatic SC';
     font-size: 110px;
+    font-weight: bold;
     text-transform: uppercase;
     color: ${color.primary_burger};
     

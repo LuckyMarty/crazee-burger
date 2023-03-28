@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../../theme';
 import { BsPersonCircle } from 'react-icons/bs';
+import { IoChevronForward } from 'react-icons/io5';
 
 export const LoginForm = () => {
     // State
@@ -20,15 +21,18 @@ export const LoginForm = () => {
     const handleChange = (event) => {
         setInputValue(event.target.value);
     }
-    
+
     return (
         <LoginFormStyled action='submit' onSubmit={handleSubmit}>
             <h1>Bienvenue chez nous !</h1>
             <hr />
             <h2>Connectez-vous</h2>
             <div>
-                <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom..." required></input>
-                <button>Accédez à votre espace </button>
+                <div className='input-container'>
+                    <BsPersonCircle />
+                    <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom..." required />
+                </div>
+                <button>Accédez à votre espace <IoChevronForward /> </button>
             </div>
         </LoginFormStyled>
     )
@@ -70,16 +74,41 @@ const LoginFormStyled = styled.form`
         gap: ${spacing.md};
         width: 400px;
 
-        >input,
-        >button {
+        >button,
+        >div,
+        >div>input {
             border-radius: ${theme.borderRadius.round};
             border: none;
+        }
+
+        >button,
+        >div {
             padding: ${spacing.md};
         }
 
         >button {
             color: ${color.white};
             background-color: ${color.primary_burger};
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+
+            &:hover {
+                background-color: ${color.white};
+                color: #000;
+            }
+        }
+
+        > div {
+            background-color: ${color.white};
+            display: flex;
+            align-items: center;
+            gap: ${spacing.sm};
+
+            >input {
+                width: 100%;
+            }
         }
     }
 `
