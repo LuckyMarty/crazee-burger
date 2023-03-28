@@ -39,6 +39,8 @@ const TextInputStyled = styled.div`
     align-items: center;
     gap: ${spacing.sm};
 
+    color: ${color.greySemiDark};
+
     >input {
         width: 100%;
         border: none;
