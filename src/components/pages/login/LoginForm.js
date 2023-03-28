@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../../theme';
-import './LoginForm.css';
+import { BsPersonCircle } from 'react-icons/bs';
+import { FaBeer } from 'react-icons/fa';
 
 export const LoginForm = () => {
     // State
@@ -23,11 +24,15 @@ export const LoginForm = () => {
     
     return (
         <LoginFormStyled action='submit' onSubmit={handleSubmit}>
+            <BsPersonCircle />
+            <FaBeer />
             <h1>Bienvenue chez nous !</h1>
-            <br />
+            <hr />
             <h2>Connectez-vous</h2>
-            <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom..." required></input>
-            <button>Accédez à votre espace</button>
+            <div>
+                <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom..." required></input>
+                <button>Accédez à votre espace </button>
+            </div>
         </LoginFormStyled>
     )
 }
@@ -35,9 +40,49 @@ export const LoginForm = () => {
 
 
 const color = theme.colors;
+const font = theme.fonts;
+const spacing = theme.spacing;
 
 const LoginFormStyled = styled.form`
-    border: 1px solid ${color.secondary};
+    text-align: center;
+
+    h1,
+    h2 {
+        font-family: 'Amatic SC';
+    }
+
+    h1 {
+        font-size: ${font.P5};
+    }
+
+    h2 {
+        font-size: ${font.P4};
+    }
+    
+    hr {
+        width: 400px;
+        height: 3px;
+        border: 1px solid ${color.orange};
+        background-color: ${color.orange};
+    }
+
+    >div {
+        display: inline-flex;
+        flex-direction: column;
+        gap: ${spacing.md};
+        width: 400px;
+
+        >input,
+        >button {
+            border-radius: ${theme.borderRadius.round};
+            border: none;
+            padding: ${spacing.md};
+        }
+
+        >button {
+            color: ${color.white};
+        }
+    }
 `
 
 
