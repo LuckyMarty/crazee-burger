@@ -9,7 +9,7 @@ export const LoginPage = () => {
 
     return (
         <LoginPageStyled>
-            <Logo />
+            <Logo className={"logo-login-page"} />
             <LoginForm />
         </LoginPageStyled>
     )

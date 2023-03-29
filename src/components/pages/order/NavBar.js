@@ -9,7 +9,7 @@ export default function NavBar() {
 
     return (
         <NavBarStyled>
-            {/* <Logo /> */}
+            <Logo />
             <div>
                 <h1>Bonjour {username}</h1>
                 <Link to="/">
