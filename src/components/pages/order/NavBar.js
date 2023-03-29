@@ -1,25 +1,26 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { theme } from '../../../theme';
 import Logo from '../../reusable-ui/logo/Logo'
+import NavBarRightSide from './NavBarRightSide';
 
 export default function NavBar() {
-    // State
-    const { username } = useParams();
-
     return (
         <NavBarStyled>
-            <Logo />
-            <div>
-                <h1>Bonjour {username}</h1>
-                <Link to="/">
-                    <button>Déconnexion</button>
-                </Link>
-            </div>
+            <a href='# '><Logo /></a>
+            <NavBarRightSide />
         </NavBarStyled>
     )
 }
 
+const color = theme.colors;
+
 const NavBarStyled = styled.div`
-  background-color: red;
+  padding: 20px;
+  background-color: ${color.white};
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
