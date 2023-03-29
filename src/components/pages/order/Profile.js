@@ -57,6 +57,7 @@ const ProfileStyled = styled.div`
             background-color: transparent;
             border: none;
             color: ${color.greyBlue};
+            cursor: pointer;
 
             &:hover {
                 color: ${color.greyDark};

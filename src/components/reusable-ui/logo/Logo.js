@@ -6,12 +6,13 @@ import img_logo from './assets/F03 logo-orange.png'
 
 export default function Logo(
     {
-        className
+        className,
+        onClick
     }
 ) {
     return (
         <LogoStyled>
-            <h1 className={className}>
+            <h1 className={className} onClick={onClick}>
                 Crazee
                 <img src={img_logo} alt="Logo" />
                 Burger
