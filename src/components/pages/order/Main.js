@@ -5,7 +5,7 @@ import { theme } from '../../../theme';
 export default function Main() {
     return (
         <MainStyled>
-            Main
+            
         </MainStyled>
     )
 }
