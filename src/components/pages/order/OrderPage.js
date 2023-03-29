@@ -32,7 +32,7 @@ const OrderPageStyled = styled.div`
         display: grid;
         grid-template-rows: 1fr 10fr;
 
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
