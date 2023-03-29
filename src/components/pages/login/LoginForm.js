@@ -34,7 +34,7 @@ export const LoginForm = () => {
                     value={inputValue}
                     onChange={handleChange}
                     placeholder="Entrez votre prénom..."
-
+                    required
                     Icon={<BsPersonCircle />}
                 />
                 
