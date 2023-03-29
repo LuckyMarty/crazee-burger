@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { theme } from '../../../theme';
+import { BsPersonCircle } from 'react-icons/bs';
+import { IoChevronForward } from 'react-icons/io5';
+import TextInput from '../../reusable-ui/TextInput';
+import PrimaryButton from '../../reusable-ui/PrimaryButton';
 
 export const LoginForm = () => {
     // State
@@ -17,15 +23,73 @@ export const LoginForm = () => {
     const handleChange = (event) => {
         setInputValue(event.target.value);
     }
-    
+
     return (
-        <form action='submit' onSubmit={handleSubmit}>
-            <h1>Bienvenu chez nous !</h1>
-            <br />
+        <LoginFormStyled action='submit' onSubmit={handleSubmit}>
+            <h1>Bienvenue chez nous !</h1>
+            <hr />
             <h2>Connectez-vous</h2>
-            <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom..." required></input>
-            <button>Accédez à votre espace</button>
-            <Link to="/order">Vers la page OrderPage</Link>
-        </form>
+            <div>               
+                <TextInput
+                    value={inputValue}
+                    onChange={handleChange}
+                    placeholder="Entrez votre prénom..."
+
+                    Icon={<BsPersonCircle />}
+                />
+                
+                <PrimaryButton
+                    label="Accédez à votre espace"
+                    Icon={<IoChevronForward />}
+                />
+            </div>
+        </LoginFormStyled>
     )
 }
+
+
+
+const color = theme.colors;
+const font = theme.fonts;
+const spacing = theme.spacing;
+
+const LoginFormStyled = styled.form`
+    text-align: center;
+
+    h1,
+    h2 {
+        font-family: 'Amatic SC';
+        color: ${color.white};
+    }
+
+    h1 {
+        font-size: ${font.P5};
+    }
+
+    h2 {
+        font-size: ${font.P4};
+    }
+    
+    hr {
+        width: 400px;
+        height: 3px;
+        border: none;
+        background-color: ${color.orange};
+    }
+
+    >div {
+        display: inline-flex;
+        flex-direction: column;
+        gap: ${spacing.md};
+        width: 400px;
+    }
+`
+
+
+/**
+ * 4 méthodes pour ajouter de style à un composants
+ * 1. inline style
+ * 2. object style
+ * 3. module CSS (avec className)
+ * 4. global style (index.css)
+ */
