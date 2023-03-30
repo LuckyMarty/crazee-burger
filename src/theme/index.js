@@ -41,14 +41,7 @@ const colors = {
     P5: "48px",
     P6: "60px",
   }
-  const gridUnit = 8
-  const borderRadius = {
-    subtle: 1,
-    round: "5px",
-    extraRound: "15px",
-    circle: "50%",
-  }
-  const shadows = {}
+
   const weights = {
     light: 300,
     regular: 400,
@@ -57,6 +50,21 @@ const colors = {
     bold: 700,
     heavy: 800,
   }
+
+  const fontFamily = {
+    F1: "Amatic SC",
+  }
+
+
+  const gridUnit = 8
+  const borderRadius = {
+    subtle: 1,
+    round: "5px",
+    extraRound: "15px",
+    circle: "50%",
+  }
+  const shadows = {}
+ 
   
   export const theme = {
     colors,
@@ -66,5 +74,6 @@ const colors = {
     shadows,
     weights,
     spacing,
+    fontFamily,
   }
   

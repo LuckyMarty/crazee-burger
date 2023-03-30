@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import { theme } from '../../../../../theme';
+import { theme } from '../../../../theme';
+import { priceFormat } from '../../../../utils/math';
 
 export default function Product(
     {
@@ -15,9 +16,9 @@ export default function Product(
                 <img src={imageSource} />
             </div>
             <div className='info-text'>
+                <div className='title'>{title}</div>
                 <div className='description'>
-                    <div className='title'>{title}</div>
-                    <div className='price'>{price}</div>
+                    <div className='price'>{priceFormat(price)}</div>
                     <button className='add-button'>Ajouter</button>
                 </div>
             </div>
@@ -27,11 +28,11 @@ export default function Product(
 
 
 const ProductStyled = styled.article`
-    background-color: ${theme.colors.background_white};
+    background-color: ${theme.colors.white};
     height: 330px;
     width: 240px;
 
-    padding: 50px 20px;
+    padding: 50px ${theme.spacing.md};
 
     border-radius: ${theme.borderRadius.extraRound};
     overflow: hidden;
@@ -45,6 +46,27 @@ const ProductStyled = styled.article`
             width: 100%;
             height: 145px;
             object-fit: contain;
+        }
+    }
+
+    .info-text {
+        .title {
+            font-family: ${theme.fontFamily.F1};
+            font-size: ${theme.fonts.P4};
+            font-weight: ${theme.weights.bold};
+        }
+
+        .description {
+            display: flex;
+            justify-content: space-between;
+
+            .price {
+                color: ${theme.colors.primary};
+            }
+
+            /* .add-button {
+                background
+            } */
         }
     }
 `;

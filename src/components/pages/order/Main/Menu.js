@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import { fakeMenu1, fakeMenu2 } from '../../../../fakeData/fakeMenu';
 import { theme } from '../../../../theme';
-import Product from './Product/Product';
+import Product from './Product';
 
 export default function Menu() {
     // Stats
