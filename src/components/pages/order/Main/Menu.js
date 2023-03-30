@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import { fakeMenu1, fakeMenu2 } from '../../../../fakeData/fakeMenu';
+import { theme } from '../../../../theme';
 
 export default function Menu() {
     // Stats
@@ -17,10 +18,6 @@ export default function Menu() {
                     </article>
                 )
             })}
-            {/* <article>
-                <div>Image</div>
-                <div>Info</div>
-            </article> */}
         </MenuStyled>
     )
 }
@@ -35,8 +32,14 @@ const MenuStyled = styled.div`
 
 
     article {
-        background-color: blueviolet;
+        background-color: ${theme.colors.background_white};
         height: 330px;
         width: 240px;
+
+        padding: 50px 50px 150px;
+
+        border-radius: ${theme.borderRadius.extraRound};
+        overflow: hidden;
+        box-shadow: -8px 8px 20px 0 rgba(0,0,0,.2);
     }
 `;
