@@ -1,25 +1,25 @@
 import React from 'react'
 import styled from 'styled-components';
-import { theme } from '../../../../theme';
-import { priceFormat } from '../../../../utils/math';
+import { theme } from '../../theme';
+import PrimaryButton from "./PrimaryButton"
 
 export default function Product(
     {
         title,
         imageSource,
-        price,
+        leftDescription,
     }
 ) {
     return (
         <ProductStyled>
             <div className='image'>
-                <img src={imageSource} />
+                <img src={imageSource} alt={title} />
             </div>
             <div className='info-text'>
                 <div className='title'>{title}</div>
                 <div className='description'>
-                    <div className='price'>{priceFormat(price)}</div>
-                    <button className='add-button'>Ajouter</button>
+                    <div className='price'>{leftDescription}</div>
+                    <PrimaryButton className="add-button" label={"Ajouter"} />
                 </div>
             </div>
         </ProductStyled>
@@ -67,17 +67,6 @@ const ProductStyled = styled.article`
 
             .price {
                 color: ${theme.colors.primary};
-            }
-
-            .add-button {
-                background-color: ${theme.colors.primary};
-                border-radius: ${theme.borderRadius.round};
-                border: 1px solid ${theme.colors.primary};
-                padding: 12px 26px;
-                
-                &:hover {
-                    background-color: ${theme.colors.white};
-                }
             }
         }
     }

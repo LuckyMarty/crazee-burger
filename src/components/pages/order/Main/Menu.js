@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { fakeMenu1, fakeMenu2 } from '../../../../fakeData/fakeMenu';
-import { theme } from '../../../../theme';
-import Product from './Product';
+import { fakeMenu2 } from '../../../../fakeData/fakeMenu';
+import Product from '../../../reusable-ui/Card';
+import { priceFormat } from "../../../../utils/math"
 
 export default function Menu() {
     // Stats
@@ -14,10 +14,10 @@ export default function Menu() {
             {products.map((product) => {
                 return (
                     <Product 
-                        // title={product.title} 
-                        // imageSource={product.imageSource} 
-                        // price={product.price} 
-                        {...product}
+                        key={product.id}
+                        title={product.title} 
+                        imageSource={product.imageSource} 
+                        leftDescription={priceFormat(product.price)} 
                     />
                 )
             })}
