@@ -13,8 +13,16 @@ export default function Menu() {
             {products.map((product) => {
                 return(
                     <article>
-                        <div>Image</div>
-                        <div>{product.title}</div>
+                        <div className='image'>
+                            <img src={product.imageSource} />
+                        </div>
+                        <div className='info-text'>
+                            <div className='title'>{product.title}</div>
+                            <div className='description'>
+                                <div className='price'>{product.price}</div>
+                                <button className='add-button'>Ajouter</button>
+                            </div>
+                        </div>
                     </article>
                 )
             })}
@@ -41,5 +49,17 @@ const MenuStyled = styled.div`
         border-radius: ${theme.borderRadius.extraRound};
         overflow: hidden;
         box-shadow: -8px 8px 20px 0 rgba(0,0,0,.2);
+
+        .image {
+            width: 100%;
+            height: 145px;
+            
+            >img {
+                width: 100%;
+                height: 145px;
+                object-fit: contain;
+            }
+        }
+
     }
 `;
