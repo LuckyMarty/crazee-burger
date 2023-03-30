@@ -7,7 +7,7 @@ import Menu from './Menu';
 export default function Main() {
     return (
         <MainStyled>
-            <Basket />
+            {/* <Basket /> */}
             <Menu />
         </MainStyled>
     )
@@ -17,7 +17,8 @@ export default function Main() {
 const MainStyled = styled.main`
     background-color: ${theme.colors.background_white};
     box-shadow: 0 8px 20px 8px rgba(0,0,0,.2) inset;
+    overflow-y: scroll;
 
     display: grid;
-    grid-template-columns: 1fr 10fr;
+    /* grid-template-columns: 1fr 10fr; */
 `;

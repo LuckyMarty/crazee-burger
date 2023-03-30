@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
+import { fakeMenu1, fakeMenu2 } from '../../../../fakeData/fakeMenu';
 
 export default function Menu() {
+    // Stats
+    const [products, setProducts] = useState(fakeMenu2);
+
+
     return (
         <MenuStyled>
-            <div>
-                <article>
-                    <div>Image</div>
-                    <div>Info</div>
-                </article>
-            </div>
+            {products.map((product) => {
+                return(
+                    <article>
+                        <div>Image</div>
+                        <div>{product.title}</div>
+                    </article>
+                )
+            })}
+            {/* <article>
+                <div>Image</div>
+                <div>Info</div>
+            </article> */}
         </MenuStyled>
     )
 }
@@ -17,18 +28,15 @@ export default function Menu() {
 
 const MenuStyled = styled.div`
     margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    justify-content: center;
 
-    >div {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 25px;
-        margin: auto;
-        justify-content: center;
-    }
 
     article {
         background-color: blueviolet;
         height: 330px;
-        min-width: 240px;
+        width: 240px;
     }
 `;
