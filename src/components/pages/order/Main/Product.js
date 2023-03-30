@@ -54,19 +54,31 @@ const ProductStyled = styled.article`
             font-family: ${theme.fontFamily.F1};
             font-size: ${theme.fonts.P4};
             font-weight: ${theme.weights.bold};
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .description {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            margin-top: 6px;
 
             .price {
                 color: ${theme.colors.primary};
             }
 
-            /* .add-button {
-                background
-            } */
+            .add-button {
+                background-color: ${theme.colors.primary};
+                border-radius: ${theme.borderRadius.round};
+                border: 1px solid ${theme.colors.primary};
+                padding: 12px 26px;
+                
+                &:hover {
+                    background-color: ${theme.colors.white};
+                }
+            }
         }
     }
 `;
