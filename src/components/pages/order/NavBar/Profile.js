@@ -2,7 +2,7 @@ import React from 'react'
 import { BsPersonCircle } from 'react-icons/bs';
 import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import { theme } from '../../../theme';
+import { theme } from '../../../../theme';
 
 export default function Profile() {
     // State
