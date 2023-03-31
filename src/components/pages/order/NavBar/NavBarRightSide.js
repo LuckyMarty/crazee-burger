@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { theme } from '../../../../theme';
 import Profile from './Profile';
 import ToggleButton from '../../../reusable-ui/ToggleButton';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import { FaUserSecret } from "react-icons/fa"
+import ToastMessage from './ToastMessage';
 
 export default function NavBarRightSide() {
     const [isAdmin, setIsAdmin] = useState(false);
@@ -51,35 +50,14 @@ export default function NavBarRightSide() {
                 onToggle={displayToastNotification}
             />
             <Profile />
-            <ToastContainer className="toaster" bodyClassName="body-toast" />
+            <ToastMessage />
         </NavBarRightSideStyled>
     )
 }
 
 
-const spacing = theme.spacing;
-
 const NavBarRightSideStyled = styled.div`
     display: flex;
     align-items: center;
     gap: 50px;
-
-
-    .toaster {
-        max-width: 300px;
-    }
-
-    .Toastify__toast.Toastify__toast-theme--dark.Toastify__toast--info {
-        background: ${theme.colors.background_dark};
-    }
-
-    .body-toast {
-        .Toastify__toast-icon.Toastify--animate-icon.Toastify__zoom-enter {
-            margin-right: 20px;
-            margin-left: 5px;
-        }
-        div {
-            line-height: 1.3em;
-        }
-    }
 `;
